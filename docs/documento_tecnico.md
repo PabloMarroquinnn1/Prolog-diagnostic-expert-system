@@ -1,9 +1,6 @@
 # Doctor Byte - Documento Técnico
-## Inteligencia Artificial 1 - USAC 2026
 
-**Estudiante:** Pablo Alejandro Marroquin Cutz  
-**Carnet:** 202200214  
-**Fecha:** Junio 2026  
+**Autor:** Pablo Alejandro Marroquin Cutz
 
 ---
 
