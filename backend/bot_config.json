@@ -1,0 +1,8 @@
+{
+  "activo": false,
+  "token": "8987305525:AAEV-cNkolSoCgpO6qEuAwPL-QijhJJrStE",
+  "chat_id": "6587440136",
+  "msg_bienvenida": "Bienvenido a Doctor Byte. Sistema experto de diagnostico de fallas.",
+  "msg_no_resultado": "No encontre fallas relacionadas con esos sintomas.",
+  "msg_error": "Ocurrio un error. Intenta de nuevo."
+}
