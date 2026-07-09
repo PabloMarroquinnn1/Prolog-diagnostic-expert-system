@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Byte - Admin</title>
+  <link rel="stylesheet" href="../static/css/style.css"/>
+  <link rel="stylesheet" href="../static/css/admin.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="logo">🩺 Doctor Byte</span>
+      <span class="subtitle">Panel de Administración</span>
+      <a href="index.html" class="btn btn-outline" style="margin-left:auto">← Volver al sistema</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('sintomas')">Síntomas</button>
+      <button class="tab" onclick="showTab('fallas')">Fallas</button>
+      <button class="tab" onclick="showTab('recomendaciones')">Recomendaciones</button>
+      <button class="tab" onclick="showTab('reglas')">Reglas</button>
+      <button class="tab" onclick="showTab('bot')">Bot Telegram</button>
+    </div>
+
+    <!-- Tab: Síntomas -->
+    <section class="card tab-content" id="tab-sintomas">
+      <h2>Gestión de Síntomas</h2>
+      <div class="form-row">
+        <input type="text" id="sin-id" placeholder="ID (ej: pantalla_roja)" class="input"/>
+        <input type="text" id="sin-nombre" placeholder="Nombre legible" class="input"/>
+        <button class="btn btn-primary" onclick="crearSintoma()">Agregar</button>
+      </div>
+      <div id="lista-sintomas" class="item-list"></div>
+    </section>
+
+    <!-- Tab: Fallas -->
+    <section class="card tab-content hidden" id="tab-fallas">
+      <h2>Gestión de Fallas</h2>
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" id="falla-id" placeholder="ID (ej: falla_nueva)" class="input"/>
+          <input type="text" id="falla-nombre" placeholder="Nombre legible" class="input"/>
+        </div>
+        <input type="text" id="falla-sintomas" placeholder="Síntomas separados por coma (ej: pantalla_azul, ruido_disco)" class="input full"/>
+        <textarea id="falla-rec" placeholder="Recomendación" class="input textarea"></textarea>
+        <button class="btn btn-primary" onclick="crearFalla()">Agregar falla</button>
+      </div>
+      <div id="lista-fallas" class="item-list"></div>
+    </section>
+
+    <!-- Tab: Recomendaciones -->
+    <section class="card tab-content hidden" id="tab-recomendaciones">
+      <h2>Gestión de Recomendaciones</h2>
+      <p class="hint">Modifica las recomendaciones de las fallas dinámicas.</p>
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" id="rec-falla-id" placeholder="ID de la falla" class="input"/>
+        </div>
+        <textarea id="rec-texto" placeholder="Texto de la recomendación" class="input textarea"></textarea>
+        <div class="form-row">
+          <button class="btn btn-primary" onclick="crearRecomendacion()">Guardar</button>
+          <button class="btn btn-danger" onclick="eliminarRecomendacion()">Eliminar</button>
+        </div>
+      </div>
+      <div id="lista-recomendaciones" class="item-list"></div>
+    </section>
+
+    <!-- Tab: Reglas -->
+    <section class="card tab-content hidden" id="tab-reglas">
+      <h2>Gestión de Reglas de Inferencia</h2>
+      <div class="form-group">
+        <div class="form-row">
+          <input type="text" id="regla-falla-id" placeholder="ID de la falla" class="input"/>
+        </div>
+        <input type="text" id="regla-sintomas" placeholder="Síntomas separados por coma" class="input full"/>
+        <button class="btn btn-primary" onclick="crearRegla()">Agregar regla</button>
+      </div>
+      <div id="lista-reglas" class="item-list"></div>
+    </section>
+
+    <!-- Tab: Bot -->
+    <section class="card tab-content hidden" id="tab-bot">
+      <h2>Configuración del Bot de Telegram</h2>
+
+      <div class="bot-status-row">
+        <span id="bot-status-label">Estado: cargando...</span>
+        <button id="btn-toggle-bot" class="btn btn-secondary" onclick="toggleBot()">...</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Token del bot</label>
+        <input type="text" id="bot-token" class="input full" placeholder="Token de BotFather"/>
+
+        <label class="form-label">Chat ID</label>
+        <input type="text" id="bot-chat-id" class="input full" placeholder="Tu chat ID"/>
+
+        <label class="form-label">Mensaje de bienvenida</label>
+        <textarea id="bot-msg-bienvenida" class="input textarea"></textarea>
+
+        <label class="form-label">Mensaje sin resultado</label>
+        <textarea id="bot-msg-no-resultado" class="input textarea"></textarea>
+
+        <label class="form-label">Mensaje de error</label>
+        <textarea id="bot-msg-error" class="input textarea"></textarea>
+
+        <button class="btn btn-primary" onclick="guardarBotConfig()">Guardar configuración</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Universidad San Carlos de Guatemala · IA1 2026 · Doctor Byte Admin</p>
+  </footer>
+
+  <script src="../static/js/admin.js"></script>
+</body>
+</html>

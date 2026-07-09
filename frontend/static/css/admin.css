@@ -1,0 +1,81 @@
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.tab {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.tab-content { margin-bottom: 1.5rem; }
+
+.form-row {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+.form-group { margin-bottom: 1.2rem; }
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+}
+.input {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  flex: 1;
+  min-width: 180px;
+}
+.input:focus { outline: none; border-color: var(--primary); }
+.input.full { width: 100%; margin-bottom: 0.6rem; }
+.textarea { min-height: 80px; resize: vertical; font-family: inherit; }
+
+.item-list { margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.item-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.item-info { flex: 1; }
+.item-id   { font-size: 0.8rem; color: var(--muted); }
+.item-name { font-weight: 600; font-size: 0.95rem; }
+.item-detail { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+.item-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.tag-origen-base    { font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 12px; background: rgba(79,142,247,0.15); color: var(--primary); }
+.tag-origen-dynamic { font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 12px; background: rgba(76,175,125,0.15); color: var(--success); }
+
+.bot-status-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem 1rem;
+  background: var(--bg3);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}

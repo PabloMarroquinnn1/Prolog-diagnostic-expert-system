@@ -1,0 +1,10 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN pip3 install requests
+
+COPY telegram_bot/ ./telegram_bot/
+COPY .env* ./
+
+CMD ["python3", "telegram_bot/bot.py"]
