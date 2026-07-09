@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Byte</title>
+  <link rel="stylesheet" href="../static/css/style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <span class="logo">🩺 Doctor Byte</span>
+      <span class="subtitle">Sistema Experto de Diagnóstico de Fallas</span>
+    </div>
+    <a href="admin.html" class="btn btn-outline" style="margin-left:auto">⚙️ Admin</a>
+  </header>
+
+  <main>
+    <section class="card" id="section-sintomas">
+      <h2>Selecciona los síntomas</h2>
+      <p class="hint">Marca todos los síntomas que presenta el equipo.</p>
+      <div id="sintomas-grid" class="sintomas-grid">
+        <p class="loading">Cargando síntomas...</p>
+      </div>
+      <div class="actions">
+        <button id="btn-limpiar" class="btn btn-secondary">Limpiar</button>
+        <button id="btn-diagnosticar" class="btn btn-primary">Diagnosticar</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="section-resultados">
+      <h2>Resultados del diagnóstico</h2>
+      <div id="resultados-container"></div>
+      <div class="actions">
+        <button id="btn-nuevo" class="btn btn-secondary">Nuevo diagnóstico</button>
+        <button id="btn-historial" class="btn btn-outline">Ver historial</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="section-historial">
+      <h2>Historial de diagnósticos</h2>
+      <div class="charts-row">
+        <div class="chart-box">
+          <h3>Fallas más frecuentes</h3>
+          <canvas id="chart-dona"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3>Diagnósticos por fecha</h3>
+          <canvas id="chart-barras"></canvas>
+        </div>
+      </div>
+      <h3 style="margin: 1.5rem 0 0.8rem">Registros</h3>
+      <div id="historial-container"></div>
+      <div class="actions">
+        <button id="btn-volver" class="btn btn-secondary">Volver</button>
+        <button id="btn-limpiar-historial" class="btn btn-danger">Limpiar historial</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Universidad San Carlos de Guatemala · IA1 2026 · Doctor Byte</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="../static/js/app.js"></script>
+</body>
+</html>
